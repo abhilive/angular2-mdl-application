@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
@@ -14,7 +15,8 @@ declare var componentHandler:any;
 
 @Component({
   selector: 'app-employee-new',
-  templateUrl: './employee-new.component.html'
+  templateUrl: './employee-new.component.html',
+  styleUrls: ['./employee-new.component.css']
 })
 
 
@@ -31,6 +33,7 @@ export class EmployeeNewComponent implements OnInit  {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private service: EmployeeService,
     private formBuilder: FormBuilder, 
     private confirmService: ConfirmService
@@ -75,7 +78,8 @@ export class EmployeeNewComponent implements OnInit  {
     }
 
     goToEmployees() { 
-      this.router.navigate(['/employees']);
+      //this.router.navigate(['/employees/']);
+      this.location.back();
     }
 
     onSubmit(values: any[]) {

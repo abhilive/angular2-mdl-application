@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewChecked} from '@angular/core';
+import { Location } from '@angular/common';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -13,7 +14,8 @@ declare var componentHandler:any;
 
 @Component({
   selector: 'app-employee-detail',
-  templateUrl: './employee-detail.component.html'
+  templateUrl: './employee-detail.component.html',
+  styleUrls: ['./employee-detail.component.css']
 })
 
 
@@ -26,6 +28,7 @@ export class EmployeeDetailComponent implements OnInit, AfterViewChecked  {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private service: EmployeeService,
     private formBuilder: FormBuilder
     ) { }
@@ -49,7 +52,6 @@ export class EmployeeDetailComponent implements OnInit, AfterViewChecked  {
 
     ngAfterViewChecked(){
         componentHandler.upgradeAllRegistered();
-        console.log('AfterViewChecked');
     }
 
     ngOnDestroy() {
@@ -71,6 +73,7 @@ export class EmployeeDetailComponent implements OnInit, AfterViewChecked  {
     }
 
     goToEmployees() { 
-      this.router.navigate(['/employees']);
+      //this.router.navigate(['/employees']);
+      this.location.back();
     }
 }
