@@ -1,0 +1,42 @@
+<style>
+.mdl-layout {
+  align-items: center;
+  /*justify-content: center;*/
+}
+.mdl-layout__content {
+  padding: 24px;
+  flex: none;
+}
+.mdl-card .mdl-card__supporting-text {
+    padding: 0 16px;
+    width: 100%;
+}
+</style>
+<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+    <main class="mdl-layout__content">
+      <div class="mdl-card mdl-shadow--6dp">
+        <div class="mdl-card__title">
+            <h5>Employee Detail</h5>
+        </div>
+        <div *ngIf="employee" class="mdl-card__supporting-text">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" [(ngModel)]="employee.name" id="name" type="text" pattern="-?[0-9]*(\.[0-9]+)?" />
+              <label class="mdl-textfield__label" for="name">Employee Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" [(ngModel)]="employee.phone" id="phone"/>
+              <label class="mdl-textfield__label" for="phone">Contact Number</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" [(ngModel)]="employee.email" id="email"/>
+              <label class="mdl-textfield__label" for="email">Email</label>
+            </div>
+
+        </div>
+        <div class="mdl-card__menu">
+          <button (click)="goToEmployees()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Back</button>
+        </div>
+      </div>
+    </main>
+</div>

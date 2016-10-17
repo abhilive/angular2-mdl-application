@@ -1,0 +1,98 @@
+<!-- Always shows a header, even in smaller screens. -->
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">{{title}}</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">{{title}}</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <style>
+    .employee-list.mdl-grid {
+      width: 512px;
+      margin-top: 50px;
+    }
+  </style>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <!-- Your content goes here -->
+        <div class="employee-list mdl-grid mdl-shadow--2dp">
+            <!-- List items with avatar and action -->
+            <style>
+            .demo-list-action {
+              width: 512px;
+              border: 1px solid grey;
+            }
+            </style>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+              <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="sample6">
+                <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+              </div>
+            </div>
+            <div class="demo-list-action mdl-list">
+              <div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <span>Bryan Cranston</span>
+                </span>
+                <span class="mdl-list__item-secondary-action">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Button
+                  </button>&nbsp;&nbsp;
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    Button
+                  </button>
+                </span>
+              </div>
+              <div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <span>Aaron Paul</span>
+                </span>
+                <span class="mdl-list__item-secondary-action">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Button
+                  </button>&nbsp;&nbsp;
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    Button
+                  </button>
+                </span>
+              </div>
+              <div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <span>Bob Odenkirk</span>
+                </span>
+                <span class="mdl-list__item-secondary-action">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Button
+                  </button>&nbsp;&nbsp;
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    Button
+                  </button>
+              </span>
+              </div>
+            </div>
+        </div>
+    </div>
+  </main>
+</div>

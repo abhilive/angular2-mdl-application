@@ -1,0 +1,32 @@
+<!-- Employee List Content -->
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--8-col-phone">
+              <div class="mdl-card__title">
+                <search-box (update)="term = $event"></search-box>
+              </div>
+
+              <div class="mdl-card__supporting-text">
+                <ul class="employee-list mdl-list">
+                  <li *ngFor="let employee of employees | employeeFilter : term" class="mdl-list__item mdl-list__item--two-line">
+                    <span class="mdl-list__item-primary-content">
+                      <i class="material-icons mdl-list__item-avatar">person</i>
+                      <span>{{employee.name}}</span>
+                      <span class="mdl-list__item-sub-title">Ph: {{employee.phone}}</span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">{{employee.email}}</span>
+                    <span class="mdl-list__item-secondary-content">
+                      <button (click)="deleteEmployee(employee)" class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Delete</button>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <a class="mdl-list__item-secondary-action mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" [routerLink]="['/employee',employee.id]">Details</a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mdl-card__menu">
+                <button (click)="addNewEmployee()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Add Employee</button>
+              </div>
+            </div>
+          </section>
+          <app-confirm></app-confirm>
+        <!-- End Of Code -->
